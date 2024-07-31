@@ -13,47 +13,45 @@
                 <aside>
                     <p>Левая колонка</p>
                 </aside>
-                <div role="contentinfo">
+                <section>
                     <h1>Работа с доступностью</h1>
 
                     <article>
                         <p>Тестовый контент</p>
                         <p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия.</p>
+                    
+                        <ul>
+                            <li>Пункт 1</li>
+                            <li>Пункт 2</li>
+                            <li>Пункт 3</li>
+                        </ul>
+    
+                        <ol>
+                            <li>Пункт 1</li>
+                            <li>Пункт 2</li>
+                            <li>Пункт 3</li>
+                        </ol>
                     </article>
-
-                    <ul>
-                        <li>Пункт 1</li>
-                        <li>Пункт 2</li>
-                        <li>Пункт 3</li>
-                    </ul>
-
-                    <ol>
-                        <li>Пункт 1</li>
-                        <li>Пункт 2</li>
-                        <li>Пункт 3</li>
-                    </ol>
-
 
                     <form action="">
                         <label for="email">Введите E-mail</label>
                         <input id="email" tabindex="0" type="email" name="email" placeholder="E-mail">
-                        <button tabindex="1" type="submit" aria-controls="message">Подписаться</button>
+                        <button tabindex="1" type="submit">Подписаться</button>
                     </form>
-                    <div role="status" id="message">Вы подписаны</div>
 
                     <button type="button" onclick="window.myDialog.showModal()">
                         Открыть модальное окно
                     </button>
 
                     <dialog id="myDialog" aria-labelledby="heading">
-                        <h2 id="heading">Привет</h2>
+                        <h3 id="heading">Привет</h2>
                         <p>Это модальное окно</p>
 
                         <button type="button" onclick="window.myDialog.close()">
                             Закрыть
                         </button>
                     </dialog>
-                </div>
+                </section>
                 <aside>
                     <p>Правая колонка</p>
                 </aside>
