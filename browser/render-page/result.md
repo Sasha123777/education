@@ -1,7 +1,8 @@
-## Анализируемая страница: https://www.laroche-posay.ru/anthelios-uvmune400-tinted-fluid
+## Анализируемая страница: 
+```https://www.laroche-posay.ru/anthelios-uvmune400-tinted-fluid```
 
-скриншот отчета - https://monosnap.com/direct/Fw4wiZIRAkneahHxo3aS1FjNDkGkPp
-ссылка на отчет - https://pagespeed.web.dev/analysis/https-www-laroche-posay-ru-anthelios-uvmune400-tinted-fluid/79b5zd31x6?form_factor=desktop
+<p>скриншот отчета - https://monosnap.com/direct/Fw4wiZIRAkneahHxo3aS1FjNDkGkPp</p>
+<p>ссылка на отчет - https://pagespeed.web.dev/analysis/https-www-laroche-posay-ru-anthelios-uvmune400-tinted-fluid/79b5zd31x6?form_factor=desktop</p>
 
 Основые показатели скорости загрузки, - Largest Contentful Paint (LCP), Interaction to Next Paint (INP), First Contentful Paint (FCP), First Input Delay (FID), в допустимых пределах.
 
