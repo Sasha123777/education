@@ -5,5 +5,5 @@ function setCookieByDay(name, value, domain) {
     let date = new Date(today.setDate(today.getDate() + 3));
     date = date.toUTCString();
 
-    document.cookie = `${name}=${encodeURIComponent(value)}; domain=${domain}; expires=${date}; samesite;`
+    document.cookie = `${name}=${encodeURIComponent(value)}; domain=${domain}; expires=${date}; samesite`;
 }
