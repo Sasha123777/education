@@ -1,2 +1,2 @@
 сслыка на выполненное задание
-https://github.com/Sasha123777/education/blob/main/html/html-accessibility/index.html
+https://github.com/Sasha123777/education/blob/main/js/recursion-and-stack/script.js
