@@ -1,4 +1,4 @@
 сслыка на выполненное задание
-Остаточные параметры функции -
-Привязка контекста -
-Констурутор функции -
+Остаточные параметры функции - https://github.com/Sasha123777/education/blob/main/js/function/script-1.js
+Привязка контекста - https://github.com/Sasha123777/education/blob/main/js/function/script-2.js
+Констурутор функции - https://github.com/Sasha123777/education/blob/main/js/function/script-3.js
