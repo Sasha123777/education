@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Всплытие и погружение</title>
+    </head>
+    <body>
+        <div class="one">
+            <div class="two">
+                <div class="three">
+                    <div class="four">
+                        <a href="https://yandex.ru" target=_self>
+                            <span>Перейти к поиску</span>
+                        </a>
+
+                        <form id="search" method="post" action="" hidden>
+                            <fieldset>
+                                <label for="searh-input">Хочу все знать:</label>
+                                <input name="searc-input" type="search" max="20" min="3" />
+                            </fieldset>
+                            <button type="submit">Найти</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // 1
+            let str = '';
+
+            for(let elem of document.querySelectorAll('*')) {
+                elem.addEventListener("click", e => {
+                    e.preventDefault();
+                    if(elem.tagName !== 'BODY' && elem.tagName !== 'HTML') {
+                        str = `${str}${str !== '' ? ' > ' : ''}${elem.tagName.toLowerCase()}${elem.classList.length > 0 ? `.${elem.classList[0]}` : ''}`;
+                    }
+                    else {
+                        str = '';
+                    }
+
+                    if(elem.tagName === e.target.tagName) {
+                        console.log(str);
+                        return str;
+                    }
+                }, true);
+            }
+
+            //2
+            document.querySelector('a').addEventListener("click", e => {
+                e.preventDefault();
+                document.querySelector('form').removeAttribute('hidden');
+            });
+        </script>
+    </body>
+</html>

@@ -47,9 +47,36 @@
 
         <script>
             function getOrderPrice() {
+                const checkboxes = document.querySelectorAll('[type=checkbox]');
+                const result = document.getElementById('total');
 
+                let sum = 0;
+
+                checkboxes.forEach((checkbox) => {
+                    if (checkbox.checked) {
+                        const price = parseInt(checkbox.getAttribute('data-price'));
+
+                        sum = sum + price;
+
+                        checkbox.closest('fieldset').style.background = 'antiquewhite';
+                    }
+                })
+                console.log(result)
+                if(sum > 0) {
+                    result.innerHTML = `
+                        <dt>
+                            Стоимость заказанных позиций:
+                        <dt>
+                        <dd>
+                            ${sum} руб.
+                        </dd>
+                    `;
+
+                    return;
+                }
+
+                result.innerHTML = '<dt>Необходимо выбрать хотя бы одну позицию<dt>';
             }
         </script>
-
     </body>
 </html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mutation Observer</title>
+    </head>
+    <body>
+        <h2>Выберите пиццу</h2>
+
+        <form class="pizza-set">
+            <fieldset>
+                <input type="checkbox" data-price="20" /> Margaerita
+            </fieldset>
+            <fieldset>
+                <input type="checkbox" data-price="20" /> Peperoni
+            </fieldset>
+            <fieldset>
+                <input type="checkbox" data-price="23" /> Quatro Formaggio
+            </fieldset>
+            <fieldset>
+                <input type="checkbox" data-price="18" /> Proshutto and Fungi
+            </fieldset>
+            <fieldset>
+                <input type="checkbox" data-price="15" /> Tomato pasta and cheese
+            </fieldset>
+            <fieldset>
+                <input type="checkbox" data-price="20" /> Bacon and Mashrooms
+            </fieldset>
+            <fieldset>
+                <input type="checkbox" data-price="23" /> Vegetarian
+            </fieldset>
+            <fieldset>
+                <input type="checkbox" data-price="17" /> Bluecheese
+            </fieldset>
+            <fieldset>
+                <input type="checkbox" data-price="21" /> Fresh Sea
+            </fieldset>
+            <fieldset>
+                <input type="checkbox" data-price="19" /> Village staff
+            </fieldset>
+        </form>
+
+        <dl id="total"></dl>
+
+        <script>
+            function sumCalculate() {
+                const checkboxes = document.querySelectorAll('[type=checkbox]');
+                const result = document.getElementById('total');
+
+                let sum = 0;
+
+                const observer = new MutationObserver(function (mutations) {
+                    for (let i = 0; i < mutations.length; i++) {
+                        console.log(mutations[i].target, 'changed', mutations[i]);
+                        const checkbox = mutations[i].target;
+                        const price = parseInt(checkbox.getAttribute('data-price'));
+
+                        if (checkbox.checked) {
+                            sum = sum + price;
+
+                            checkbox.closest('fieldset').style.background = 'antiquewhite';
+                        } else {
+                            sum = sum - price;
+
+                            checkbox.closest('fieldset').style.background = 'white';
+                        }
+
+                        if (sum > 0) {
+                            result.innerHTML = `
+                            <dt>
+                                Стоимость заказанных позиций:
+                            <dt>
+                            <dd>
+                                ${sum} руб.
+                            </dd>
+                        `;
+
+                            return;
+                        }
+
+
+                        result.innerHTML = '<dt>Необходимо выбрать хотя бы одну позицию<dt>';
+                    }
+                });
+
+                checkboxes.forEach((checkbox) => {
+                    checkbox.addEventListener('click', function (e) {
+                        e.target.setAttribute('checked', e.target.checked);
+                    });
+
+                    observer.observe(checkbox, {
+                        attributes: true
+                    });
+                });
+            }
+
+            sumCalculate();
+        </script>
+    </body>
+</html>
