@@ -1,4 +1,4 @@
 сслыка на выполненное задание
-Взаимодействие с DOM -
-Mutation Observer -
-Всплытие и погружение-
+Взаимодействие с DOM - https://github.com/Sasha123777/education/blob/main/js/dom/index-1.html
+Mutation Observer - https://github.com/Sasha123777/education/blob/main/js/dom/index-2.html
+Всплытие и погружение - https://github.com/Sasha123777/education/blob/main/js/dom/index-3.html
