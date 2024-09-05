@@ -11,16 +11,16 @@
             <section>
                 <h2>Picture</h2>
                 <picture>
-                    <source media="(max-width: 767px)" srcset="/images/microbiom_mob_1x.png 1x, /images/microbiom_mob_2x.png 2x">
-                    <source media="(max-width: 767px)" srcset="/images/microbiom_mob_1x.webp 1x, /images/microbiom_mob_2x.webp 2x" type="image/webp">
+                    <source media="(max-width: 767px)" srcset="images/microbiom_mob_1x.png 1x, images/microbiom_mob_2x.png 2x">
+                    <source media="(max-width: 767px)" srcset="images/microbiom_mob_1x.webp 1x, images/microbiom_mob_2x.webp 2x" type="image/webp">
 
-                    <source media="(max-width: 1024px)" srcset="/images/microbiom_tablet_1x.png 1x, /images/microbiom_tablet_2x.png 2x">
-                    <source media="(max-width: 1024px)" srcset="/images/microbiom_tablet_1x.webp 1x, /images/microbiom_tablet_2x.webp 2x" type="image/webp">
+                    <source media="(max-width: 1024px)" srcset="images/microbiom_tablet_1x.png 1x, images/microbiom_tablet_2x.png 2x">
+                    <source media="(max-width: 1024px)" srcset="images/microbiom_tablet_1x.webp 1x, images/microbiom_tablet_2x.webp 2x" type="image/webp">
 
-                    <source srcset="/images/microbiom_1x.png 2x">
-                    <source srcset="/images/microbiom_1x.webp 2x" type="image/webp">
+                    <source srcset="images/microbiom_2x.png 2x">
+                    <source srcset="images/microbiom_1x.webp 1x, images/microbiom_2x.webp 2x" type="image/webp">
 
-                    <img src="/images/microbiom_1x.png" alt="Красивая картинка" width="500" height="500">
+                    <img src="images/microbiom_1x.png" alt="Красивая картинка" width="500" height="500">
                 </picture>
             </section>
 
@@ -28,11 +28,10 @@
                 <h2>Audio</h2>
 
                 <audio controls preload="metadata" muted loop>
-                    <source src="/audio/audio.mp3" type="audio/mpeg">
-                    <source src="/audio/audio.ogg" type="audio/ogg">
+                    <source src="audio/audio.mp3" type="audio/mpeg">
                     <p>
                         Ваш браузер не поддерживает встроенное аудио. Попробуйте
-                        <a href="/audio/audio.mp3" download>скачать</a> файл.
+                        <a href="audio/audio.mp3" download>скачать</a> файл.
                     </p>
                 </audio>
             </section>
@@ -40,12 +39,12 @@
             <section>
                 <h2>Video</h2>
 
-                <video controls preload="auto" muted loop playsinline width="500" height="500" poster="/images/poster.png">
-                    <source src="/video/video.mp4" type="video/mp4">
-                    <source src="/video/video.webm" type="video/webm">
+                <video controls preload="auto" muted loop playsinline width="500" height="500" poster="images/poster.png">
+                    <source src="video/video.mp4" type="video/mp4">
+                    <source src="video/video.webm" type="video/webm">
                     <p>
                         Ваш браузер не поддерживает встроенные видео. Попробуйте скачать его по
-                        <a href="/video/video.mp4">этой ссылке</a>.
+                        <a href="video/video.mp4">этой ссылке</a>.
                     </p>
                 </video>
             </section>
@@ -54,8 +53,8 @@
                 <h2>Source</h2>
 
                 <picture>
-                    <source srcset="microbiome_mob.png 600w, microbiome_tablet.png 1000w" sizes="(max-width: 1500px) 50vw, 1000px">
-                    <img src="/images/microbiome.png" alt="Тестовое изображение">
+                    <source srcset="images/microbiom_mob_1x.png 600w, images/microbiom_tablet_1x.png 1000w" sizes="(max-width: 1500px) 50vw, 1000px">
+                    <img src="images/microbiom_1x.png" alt="Тестовое изображение">
                 </picture>
             </section>
 
@@ -65,20 +64,20 @@
                 <map name="test-label">
                     <area shape="rect" coords="40,20,420,130" href="/html/" alt="Раздел HTML">
                 </map>
-                <img src="/images/test.svg" usemap="#test-label" alt="Тестовая картинка">
+                <img src="images/test.svg" usemap="#test-label" alt="Тестовая картинка">
             </section>
 
             <section>
                 <h2>Embded</h2>
 
-                <embed src="/pdf-document/documet-test.pdf" type="application/pdf" width="500" height="500">
+                <embed src="pdf-document/example.pdf" type="application/pdf" width="500" height="500">
             </section>
 
             <section>
                 <h2>Object</h2>
 
-                <object type="application/pdf" data="/pdf-document/example.pdf" width="700" height="700" usemap="#test-label">
-                    <a href="/pdf-document/example.pdf">Документ PDF</a>
+                <object type="application/pdf" data="pdf-document/example.pdf" width="700" height="700" usemap="#test-label">
+                    <a href="pdf-document/example.pdf">Документ PDF</a>
                 </object>
             </section>
 
