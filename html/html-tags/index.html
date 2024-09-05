@@ -70,13 +70,13 @@
             <section>
                 <h2>Embded</h2>
 
-                <embed src="pdf-document/example.pdf" type="application/pdf" width="500" height="500">
+                <embed src="pdf-document/example.pdf" width="500" height="500">
             </section>
 
             <section>
                 <h2>Object</h2>
 
-                <object type="application/pdf" data="pdf-document/example.pdf" width="700" height="700" usemap="#test-label">
+                <object data="pdf-document/example.pdf" width="700" height="700" usemap="#test-label">
                     <a href="pdf-document/example.pdf">Документ PDF</a>
                 </object>
             </section>
@@ -84,11 +84,17 @@
             <section>
                 <h2>Meter</h2>
                 <p>Температура воды</p>
+                <label for="temp-1">Низкая</label>
+                <meter id="temp-1" value="0" max="100" low="10" high="60"></meter>
 
-                <meter value="0" max="100" low="10" high="60">Низкая</meter>
-                <meter value="30" max="100" low="10" high="60">Нормальная</meter>
-                <meter value="80" max="100" low="10" high="60">Горячая</meter>
-                <meter value="100" max="100">Кипяток</meter>
+                <label for="temp-2">Нормальная</label>
+                <meter id="temp-2" value="30" max="100" low="10" high="60"></meter>
+
+                <label for="temp-3">Горячая</label>
+                <meter id="temp-3" value="80" max="100" low="10" high="60"></meter>
+
+                <label for="temp-4">Кипяток</label>
+                <meter id="temp-4" value="100" max="100"></meter>
             </section>
 
             <section>
@@ -162,5 +168,34 @@
                 </figure>
             </section>
         </main>
+
+        <script>
+            let canvas = document.querySelector('#canvas');
+            let ctx=canvas.getContext('2d');
+            let yCordinates = [];
+            
+            for(let i = 0; i < 256; i++){
+                yCordinates.push(1);
+            }
+            
+            function drawLayer() {
+                let posX = 10;
+                
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#ba00ff';
+                
+                yCordinates.forEach((posY, index)=>{
+                    const randChar = String.fromCharCode(48 + Math.random() * 30);
+                    
+                    ctx.fillText(randChar, posX, posY);
+                    
+                    posX+=20;
+                    yCordinates[index] = posY > 750 + Math.random() * 1e4 ? 0 : posY + 10;
+                })
+            }
+
+            setInterval(drawLayer, 60)
+        </script>
     </body>
 </html>
