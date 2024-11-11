@@ -68,30 +68,33 @@ const getDataFetch = () => {
 }
 
 const getDataAsync =  async () => {
-    const response = await fetch(url);
+    try {
+        const response = await fetch(url);
 
-    if(response.status !== 200) {
-        renderErrorMessage('Ошибка выполнения запроса');
-        return;
+        if(response.status !== 200) {
+            throw new Error('Ошибка выполнения запроса');
+        }
+
+        const data =  await response.json();
+
+        if(data.characters.length === 0) {
+            throw new Error('В ответе запроса нет необходимых данных');
+        }
+
+        const responseCharacter = await fetch(data.characters[0]);
+
+        if (responseCharacter.status !== 200) {
+            throw new Error('Ошибка выполнения запроса');
+        }
+
+        return await responseCharacter.json();
     }
-    const data =  await response.json();
-
-    if(data.characters.length == 0) {
-        renderErrorMessage('В ответе запроса нет необходимых данных');
-        return;
+    catch (e) {
+        throw e;
     }
-
-    const responseCharacter = await fetch(data.characters[0]);
-
-    if (responseCharacter.status !== 200) {
-        renderErrorMessage('Ошибка выполнения запроса');
-        return;
-    }
-
-    const dataCharacter = await responseCharacter.json();
-
-    renderCharacterProfile(dataCharacter);
 }
 
 getDataFetch();
-getDataAsync();
+
+const result = await getDataAsync();
+console.log(result)
