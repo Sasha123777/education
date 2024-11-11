@@ -1,6 +1,8 @@
 
-function getReverseNumber(n, a = 0) {
-    if(n === 0 && a === 0) {
+function getReverseNumber(n, a = 0, countPrev = 0) {
+    const isNoValid = n.toString().includes('0');
+
+    if((isNoValid && n.toString().length > 1) || (countPrev === 0 && n === 0)) {
         return 'число n не должно содержать нулей';
     }
 
@@ -8,13 +10,9 @@ function getReverseNumber(n, a = 0) {
         return a;
     }
 
-    const isNoValid = n.toString().includes('0');
+    let count = countPrev + 1;
 
-    if(isNoValid) {
-        return 'число n не должно содержать нулей';
-    }
-
-    return getReverseNumber(Math.trunc(parseInt((n / 10).toFixed(1))), 10 * a + n % 10);
+    return getReverseNumber(Math.trunc(parseInt((n / 10).toFixed(1))), 10 * a + n % 10, count);
 }
 
 console.log(getReverseNumber(123))
